@@ -467,11 +467,11 @@
     <p class="eyebrow" style="color:var(--gold-lt)">Ready when you are</p>
     <h2>Let's get your puja ready</h2>
     <p>Send us the festival, your date and the set you'd like. We'll confirm on WhatsApp and take it from there.</p>
-    <a class="btn btn-wa" id="waBtn" href="https://wa.me/918439696636?text=Namaste%20AKSHAT!%20I'd%20like%20to%20order%20a%20pooja%20set.%20Festival%3A%20____%20%7C%20Date%3A%20____%20%7C%20Tier%3A%20____">
+    <a class="btn btn-wa" id="waBtn" href="#order">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .3-3.3-.7-2.8-1.2-4.5-4-4.7-4.2-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.4.4-.2.7.2.3.8 1.3 1.7 2 .9.8 1.7 1 2 .8.2-.2.5-.7.7-.9.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
       Order on WhatsApp
     </a>
-    <div class="addr">AKSHAT — Tower 18, PFR, Bangalore</div>
+    <div class="addr">Bangalore</div>
   </div>
 </section>
 
@@ -583,8 +583,10 @@
     }
   })();
 
-  const WA='https://wa.me/918439696636?text=';
+  const WA_PARTS=['91843','969','6636'];
+  const WA='https://wa.me/'+WA_PARTS.join('')+'?text=';
   function setWA(msg){document.getElementById('waBtn').href=WA+encodeURIComponent(msg);}
+  setWA("Namaste AKSHAT! I'd like to order a pooja set. Festival: ____ | Date: ____ | Tier: ____");
   document.querySelectorAll('.tier .btn').forEach(b=>b.addEventListener('click',()=>{
     const t=b.closest('.tier').querySelector('.tier-name').textContent.trim();
     setWA(`Namaste AKSHAT! I'd like the ${t} pooja set. Festival: ____ | Date: ____`);
